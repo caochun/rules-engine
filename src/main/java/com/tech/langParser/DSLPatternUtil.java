@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 @Slf4j
 @Service
 public class DSLPatternUtil {
-    private static final Pattern DSL_PATTERN = Pattern.compile("\\$\\((\\w+)(\\.\\w+)\\)"); //$(rulenamespace.keyword)
+    private static final Pattern DSL_PATTERN = Pattern.compile("\\$\\((\\w+)(\\.\\w+)\\)"); // $(rulenamespace.keyword)
     private static final String DOT = ".";
 
     public List<String> getListOfDslKeywords(String expression) {
@@ -27,16 +27,15 @@ public class DSLPatternUtil {
     }
 
     public String extractKeyword(String keyword) {
-        return keyword.substring(keyword.indexOf('(') + 1,
-                keyword.indexOf(')'));
+        return keyword.substring(keyword.indexOf('(') + 1, keyword.indexOf(')'));
     }
 
-    public String getKeywordResolver(String dslKeyword){
+    public String getKeywordResolver(String dslKeyword) {
         ArrayList<String> splittedKeyword = Lists.newArrayList(Splitter.on(DOT).omitEmptyStrings().split(dslKeyword));
         return splittedKeyword.get(0);
     }
 
-    public String getKeywordValue(String dslKeyword){
+    public String getKeywordValue(String dslKeyword) {
         ArrayList<String> splittedKeyword = Lists.newArrayList(Splitter.on(DOT).omitEmptyStrings().split(dslKeyword));
         return splittedKeyword.get(1);
     }

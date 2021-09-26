@@ -31,7 +31,8 @@ public class RuleEngineRestController {
 
     @GetMapping(value = "/get-all-rules/{ruleNamespace}")
     public ResponseEntity<?> getRulesByNamespace(@PathVariable("ruleNamespace") String ruleNamespace) {
-        RuleNamespace namespace = Enums.getIfPresent(RuleNamespace.class, ruleNamespace.toUpperCase()).or(RuleNamespace.DEFAULT);
+        RuleNamespace namespace = Enums.getIfPresent(RuleNamespace.class, ruleNamespace.toUpperCase())
+                .or(RuleNamespace.DEFAULT);
         List<Rule> allRules = knowledgeBaseService.getAllRuleByNamespace(namespace.toString());
         return ResponseEntity.ok(allRules);
     }

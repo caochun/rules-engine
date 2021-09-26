@@ -23,7 +23,7 @@ public class DSLKeywordResolver {
                 .collect(Collectors.toMap(DSLResolver::getResolverKeyword, Function.identity()));
     }
 
-    public Map<String, DSLResolver> getDslKeywordResolverList(){
+    public Map<String, DSLResolver> getDslKeywordResolverList() {
         return dslKeywordResolverList;
     }
 

@@ -16,13 +16,14 @@ public class BankResolver implements DSLResolver {
 
     @Override
     public Object resolveValue(String keyword) {
-        if (keyword.equalsIgnoreCase(INTEREST)){
-            //Code to calculate the current variable interest rates.
+        if (keyword.equalsIgnoreCase(INTEREST)) {
+            // Code to calculate the current variable interest rates.
             return 9.0;
         }
 
-        if (keyword.equalsIgnoreCase(TARGET_DONE)){
-            //Code to see the bank target of giving loan for this current year is done or not.
+        if (keyword.equalsIgnoreCase(TARGET_DONE)) {
+            // Code to see the bank target of giving loan for this current year is done or
+            // not.
             return false;
         }
 
